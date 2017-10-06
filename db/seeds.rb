@@ -7,37 +7,9 @@ def csv_to_array(file_location)
     fields = fields.map {|f| f.downcase}
     csv.collect { |record| Hash[*fields.zip(record).flatten ] }
 end
+airlines = csv_to_array('/db/airlines.csv')
+airports = csv_to_array('airports.csv')
 
-  ####FOR AIRPORTS
-def parse_dat(dat_file, info_type, keys)
-  input = File.open(dat_file, File::RDONLY){|f| f.read }
-  #input is one long string
-  input.delete!('\\"')
-  input.delete!('\\\"')
-  lines = input.split(/\n/)
-  info_type = []
-  data = []
-  lines.map! do |line|
-    formatted = line.split(',')
-    #refactor with array
-    formatted[0]=formatted[0].to_i
-    formatted[6]=formatted[6].to_f
-    formatted[7]=formatted[7].to_f
-    formatted[8]=formatted[8].to_f
-    formatted[9]=formatted[9].to_f
-    data << formatted
-  end
-    data.map! do |x|
-      data_info = Hash[keys.zip(x)]
-      info_type << data_info
-    end
-    return info_type.flatten
-end
-
-airport_keys = ['airport id', ' name', ' city', ' country', ' iata', ' icao', ' latitude', ' longitude', ' altitude', ' timezone', ' DST', ' tz database time zone', ' type', ' source']
-
-airports = parse_dat('airports.dat', 'airports', airport_keys)
-airlines = csv_to_array('airlines.csv')
 routes = csv_to_array('routes.csv')
 
 airlines.each do |airline|
