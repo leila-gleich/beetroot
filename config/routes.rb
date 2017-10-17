@@ -1,12 +1,8 @@
 Rails.application.routes.draw do
-  get 'route/index'
 
-  get 'route/show'
-
-  get 'route/update'
-
-  resources :routes
   resources :airlines
   resources :airports
+  resources :routes
+  
   root 'welcome#index'
 end

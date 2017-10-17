@@ -1,0 +1,13 @@
+<h1 class="page-header">Check out all of the routes!</h1>
+
+<div class="">
+  <%@routes.each do |route|%>
+    <%airline_id = route.airline_id%>
+    <%airline = Airline.find_by_id(airline_id)%>
+    <%if airline%>
+      <ol>
+        <%=airline.name%>
+      </ol>
+    <%end%>
+  <%end%>
+</div>
