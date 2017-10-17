@@ -1,3 +1,12 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'route/index'
+
+  get 'route/show'
+
+  get 'route/update'
+
+  resources :routes
+  resources :airlines
+  resources :airports
+  root 'welcome#index'
 end

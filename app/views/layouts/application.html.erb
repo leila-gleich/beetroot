@@ -6,9 +6,28 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Assistant:200|Cormorant+Garamond:300|Cormorant+SC:300|Questrial" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Megrim|Parisienne|Petit+Formal+Script" rel="stylesheet">
+    <!-- fonts -->
+
   </head>
 
   <body>
+
+    <div class="header" id="header">
+      <h1 id="header-name" class="no-decoration"><%=link_to "BeetRoot", root_path%></h1>
+    </div>
+
+    <section id="menu">
+      <span id="menu-items">
+          <p class="menu-item no-decoration"><%=link_to "Airlines", airlines_path, :class=>"menu-link"%></p>
+          <p class="menu-item no-decoration"><%=link_to "Airports", airports_path, :class=>"menu-link"%></p>
+          <p class="menu-item no-decoration"><%=link_to "Routes", routes_path, :class=>"menu-link"%></p>
+      </span>
+    </section>
+
     <%= yield %>
   </body>
 </html>

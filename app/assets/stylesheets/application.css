@@ -1,15 +1,57 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body{
+   font-family: 'Assistant', sans-serif;
+   margin-top:0;
+   background-image: url("plane-bg.jpg");
+}
+
+#header-name{
+  margin:0;
+}
+
+h1#header-name a{
+  color: grey;
+  font-size: 50px;
+  position:fixed;
+  margin-top:10px;
+  margin-left:50px;
+  opacity: .5;
+}
+
+h1#header-name a:hover {
+  color:	#696969;
+}
+
+#menu {
+  padding-left: 70%;
+  padding-top:35px;
+  height:55px;
+  width:110%;
+}
+
+.menu-link {
+  color:	white;
+  opacity:.7;
+}
+
+#menu-items p:hover {
+  font-size: 24px;
+}
+
+#menu-items p {
+  display: inline;
+  padding: 15px;
+  margin: 10px;
+  position:relative;
+}
+
+section.main {
+  margin: 30px 60px;
+}
+
+h1.page-header{
+  margin-left:20%;
+}
+
+.no-decoration a{
+  text-decoration: none;
+}
